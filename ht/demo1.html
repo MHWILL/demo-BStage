@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>数据列表页</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/index.css" />
+        <link rel="stylesheet" href="css/sub_nav.css" />
+        <script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+        <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+        <script type="text/javascript" src="js/bootstrap-treeview.min.js" ></script>
+        
+    </head>
+    <body>
+    	<div class="list_wrapper">
+           <div class="clearfix tab_wrapper">
+           		<ul class="pull-left tab_add">
+	           		<li>系统单位</li>
+	           	</ul>
+           		<div class="pull-right list_subnav"><span class="ml"></span>当前位置：<a href="##">基础信息</a> > <a href="##">人口信息</a> > 未落户人口</div>
+           </div>
+           <div class="tab_list"> 
+	           <div class="tab_one">
+			        <div class="toolbar_all">	
+				           <!--按钮-->
+				           <div class="pull-left full_button">
+				           		<button><span class="icon_btn btn_search"></span>高级搜索</button>
+				           		<button id='btn_add'><span class="icon_btn btn_add" ></span>新增项目</button>
+				           		<button id='refresh'><span class="icon_btn btn_load"></span>刷新信息</button>
+				           		<!--批量删除 要判断是否选择了表格中的数据，没有选中数据的时候 则button 安妞应该表示不可以用 样式为btn_dis,有选择数据的样式为：btn_del-->
+					            <button id="button"><span class="icon_btn btn_del"></span>批量删除</button>
+				           </div>
+		           </div>
+	           	</div>
+           </div>
+          </div>
+          <!--中间部分-->
+          <div class="sub_nav" >
+          	<div class="sub_navLeft">
+          		 <div id="treeview3" class=""></div>
+          	</div>
+          	<div class="sub_navRight">
+          		<ul>
+          			<li><span class="sub_navtitle"  title="编号">编号：</span><span class="sub_navdetail">S1T199</span></li>
+          			<li><span class="sub_navtitle" title="名称">名称：</span><span class="sub_navdetail">甘孜州</span></li>
+          			<li><span class="sub_navtitle" title="序列">序列：</span><span class="sub_navdetail">S1T199</span></li>
+          			<li><span class="sub_navtitle" title="电话">电话：</span><span class="sub_navdetail">S1T199</span></li>
+          			<li><span class="sub_navtitle" title="系统顶部图片系统顶部图片系统顶部图片">系统顶部图片系统顶部图片系统顶部图片 </span><span class="sub_navdetail">S1T199</span></li>
+          			<li><span class="sub_navtitle" title="对应域名">对应域名：</span><span class="sub_navdetail">S1T199</span></li>
+          			<li><span class="sub_navtitle" title="是否启用短信">是否启用短信：</span><span class="sub_navdetail">S1T199</span></li>
+          			<li><span class="sub_navtitle" title="说明">说明：</span><span class="sub_navdetail">S1T199</span></li>
+          		</ul>
+          </div>
+    <script type="text/javascript">
+	  $(function() {
+        var defaultData = [
+          {
+            text: 'Parent 1',
+            href: '#parent1',
+            tags: ['4'],
+            nodes: [
+              {
+                text: 'Child 1',
+                href: '#child1',
+                tags: ['2'],
+                nodes: [
+                  {
+                    text: 'Grandchild 1',
+                    href: '#grandchild1',
+                    tags: ['0']
+                  },
+                  {
+                    text: 'Grandchild 2',
+                    href: '#grandchild2',
+                    tags: ['0']
+                  }
+                ]
+              },
+              {
+                text: 'Child 2',
+                href: '#child2',
+                tags: ['0']
+              }
+            ]
+          },
+          {
+            text: 'Parent 2',
+            href: '#parent2',
+            tags: ['0']
+          },
+          {
+            text: 'Parent 3',
+            href: '#parent3',
+             tags: ['0']
+          },
+          {
+            text: 'Parent 4',
+            href: '#parent4',
+            tags: ['0']
+          },
+          {
+            text: 'Parent 5',
+            href: '#parent5'  ,
+            tags: ['0']
+          }
+        ];
+
+        var alternateData = [
+          {
+            text: 'Parent 1',
+            tags: ['2'],
+            nodes: [
+              {
+                text: 'Child 1',
+                tags: ['3'],
+                nodes: [
+                  {
+                    text: 'Grandchild 1',
+                    tags: ['6']
+                  },
+                  {
+                    text: 'Grandchild 2',
+                    tags: ['3']
+                  }
+                ]
+              },
+              {
+                text: 'Child 2',
+                tags: ['3']
+              }
+            ]
+          },
+          {
+            text: 'Parent 2',
+            tags: ['7']
+          },
+          {
+            text: 'Parent 3',
+            icon: 'glyphicon glyphicon-earphone',
+            href: '#demo',
+            tags: ['11']
+          },
+          {
+            text: 'Parent 4',
+            icon: 'glyphicon glyphicon-cloud-download',
+            href: '/demo.html',
+            tags: ['19'],
+            selected: true
+          },
+          {
+            text: 'Parent 5',
+            icon: 'glyphicon glyphicon-certificate',
+            color: 'pink',
+            backColor: 'red',
+            href: 'http://www.tesco.com',
+            tags: ['available','0']
+          }
+        ];
+
+        var json = '[' +
+          '{' +
+            '"text": "Parent 1",' +
+            '"nodes": [' +
+              '{' +
+                '"text": "Child 1",' +
+                '"nodes": [' +
+                  '{' +
+                    '"text": "Grandchild 1"' +
+                  '},' +
+                  '{' +
+                    '"text": "Grandchild 2"' +
+                  '}' +
+                ']' +
+              '},' +
+              '{' +
+                '"text": "Child 2"' +
+              '}' +
+            ']' +
+          '},' +
+          '{' +
+            '"text": "Parent 2"' +
+          '},' +
+          '{' +
+            '"text": "Parent 3"' +
+          '},' +
+          '{' +
+            '"text": "Parent 4"' +
+          '},' +
+          '{' +
+            '"text": "Parent 5"' +
+          '}' +
+        ']';
+
+
+        $('#treeview3').treeview({
+          levels: 99,
+          data: defaultData,
+          selectedBackColor: "#0095d9",
+        });
+  		});
+	  	</script>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+左边导航构成：
+文件  js文件中 index.js 第312行：
+
+中间参数：F_ModuleId：本身节点的值，F_ParentId：父节点的值， F_FullName：显示文字
+F_Icon：显示图标    F_UrlAddress：该节点要访问的地址
+
+
+第一级节点  两种情况：
+    1、下面没有子节点 就一个节点的时候  F_ParentId：dd
+	2、下面有子节点：父节点的表示：F_ParentId：0， 其他都一样
+	                 子节点的表示：F_ParentId：父节点的F_ModuleId
+	
+	
+     loadMenu: function () {
+            var data = [
+			    {
+			        "F_ModuleId": "1q",//本身节点
+			        "F_ParentId": "0",//父节点
+			        "F_FullName": "组织结构", //节点内容
+			        "F_Icon": "icon_change sub_zz",//节点图标
+			        "F_UrlAddress": null,//节点地址
+			    },
+				{
+			        "F_ModuleId": "22",
+			        "F_ParentId": "1q",     
+			        "F_FullName": "未落户人口",
+			        "F_Icon": "icon_change",
+			        "F_UrlAddress":"list_demo.html",
+			   },
+				  {
+			        "F_ModuleId": "2",
+			        "F_ParentId": "0",
+			        "F_FullName": "人口信息",
+			        "F_Icon": "icon_change sub_info",
+			        "F_UrlAddress": null,
+			    },{
+			        "F_ModuleId": "cc",
+			        "F_ParentId": "2",
+			        "F_FullName": "人口信息",
+			        "F_Icon": "icon_change",
+			        "F_UrlAddress":null,
+			    },
+				  {
+			        "F_ModuleId": "err",
+			        "F_ParentId": "2",
+			        "F_FullName": "特殊人群",
+			        "F_Icon": "icon_change ",
+			        "F_UrlAddress": null,
+			    }, 
+			    {
+			        "F_ModuleId": "ee",
+			        "F_ParentId": "2",
+			        "F_FullName": "关怀对象",
+			        "F_Icon": "icon_change ",
+			        "F_UrlAddress": null,
+			    },
+				  {
+			        "F_ModuleId": "3",
+			        "F_ParentId": "dd",
+			        "F_FullName": "房屋信息",
+			        "F_Icon": "icon_change sub_house ",
+			        "F_UrlAddress": null,
+			    },
+				  {
+			        "F_ModuleId": "3",
+			        "F_ParentId": "dd",
+			        "F_FullName": "单位场所",
+			        "F_Icon": "icon_change sub_dan",
+			        "F_UrlAddress": null,
+			    }
+			];
+            

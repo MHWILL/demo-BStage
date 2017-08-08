@@ -1,0 +1,8 @@
+.sub_navLeft{ width: 240px;position: absolute;*position: relative;float: left;margin: 0; overflow: hidden;margin-left: 10px;}
+.sub_navRight{ margin-left: 260px;position: relative; overflow: hidden;  border-top:  1px solid #eef1f4;border-left:  1px solid #eef1f4;
+ border-right:  1px solid #eef1f4;  margin-right: 2px;}
+ .sub_navLefttitle{ margin-top: -3px; margin-bottom: 20px; margin-left: 10px;}
+.sub_navRight ul li{ overflow: hidden;}
+.sub_navRight ul li span.sub_navtitle{width: 20%;min-width: 80px; background: #f9f9f9;display:block;line-height: 45px;text-align: right;
+border-right: 1px solid #eef1f4; border-bottom: 1px solid #eef1f4; float: left;overflow: hidden;text-overflow:clip;white-space: nowrap; padding-right: 10px;}
+.sub_navRight ul li span.sub_navdetail{width: 80%;display:block; float:right; line-height: 45px;text-indent:10px; border-bottom: 1px solid #eef1f4; }

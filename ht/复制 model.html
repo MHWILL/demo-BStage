@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/date.css" />
+        <link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+	        <div class="modal-dialog">
+	            <div class="modal-content">
+	                <div class="modal-header clearfix mid">
+	                    <button type="button" class="close mid" data-dismiss="modal" aria-hidden="true">×</button>
+	                    <h4 class="modal-title shortcut-modal-title mid m_title" id="myModalLabel">新增单位场所</h4>
+	                </div>
+	                <div class="modal-body shortcut-add-box clearfix" >
+	                   <ul class="clearfix">
+	                  	<!--以下分为两种，一种是一行排一个，则需要在   li   标签上加上类名 win_100     如果排两个 不需要写什么-->
+	                  	<li class="win_100"><label><span>*</span>所属网络:</label><input type="text" value="请选择所在网格"  onFocus="if(value==defaultValue){value='';}" 
+			           				onBlur="if(!value){value=defaultValue;}"   />  
+			           		<p>所属网络不能为空</p>		
+	                  	</li>
+	                  	<li><label><span>*</span>类型:</label><div class="calendarWarp" >
+								<input type="text"  class='ECalendar' id="ECalendar_case1"/>
+							</div>
+	                   </li>
+	                  	<li><label><span>*</span>分类:</label>
+	                  		<select>
+	                  			<option>选择一</option>
+	                  			<option>选择二</option>
+	                  			<option>选择3</option>
+	                  			<option>选择4</option>
+	                  		</select>
+	                  	</li>
+	                  	<li><label><span>*</span>性别:</label>
+	                  		<label for='male'><input type="radio" name="sex" id='male' />男</label>
+	                  		<label for='wo'><input type="radio" name="sex" id='wo'/>女</label>
+	                  		<label for='dis_r' class="dis_abled"><input type="radio" name="sex" id='dis_r' disabled="disabled" />不可用</label>
+	                  	</li>
+	                  	
+	                  	<li><label>联系电话:</label><input type="text" value="请输入固定的电话"  onFocus="if(value==defaultValue){value='';}" 
+			           				onBlur="if(!value){value=defaultValue;}"   />  
+	                  	</li>
+	                  	<li class="win_100"><label><span>*</span>学历:</label>
+	                  		<label for='d_z'><input type="checkbox" checked="checked"  id='d_z'/>大专</label>
+	                  		<label for='zz'><input type="checkbox" id='zz'/>中专</label>
+	                  		<label for='ss'><input type="checkbox"  id='ss'/>硕士</label>
+	                  		<label for='bs'><input type="checkbox"  id='bs'/>博士</label>
+	                  		<label for='gz' class="dis_abled"><input type="checkbox" disabled="disabled" id='gz' />高中</label>
+	                  	</li>
+	                  	<li>
+	                  		<label>关注程度:</label> 
+	                  		<div id="star_M">
+								<ul>
+									<li><a href="javascript:;">1</a></li>
+									<li><a href="javascript:;">2</a></li>
+									<li><a href="javascript:;">3</a></li>
+									<li><a href="javascript:;">4</a></li>
+									<li><a href="javascript:;">5</a></li>
+								</ul>
+								<span></span>
+								<p>请选择关注程度</p>
+							</div>
+	                  	</li>
+	                  	<li><label>传真号码:</label><input type="text" value="请输入传真号码"  onFocus="if(value==defaultValue){value='';}" 
+			           				onBlur="if(!value){value=defaultValue;}"   />  
+	                  	</li>
+	                  	<li class="win_100 bei_top"><label>备注:</label>
+	                  	<textarea >	</textarea>
+	                  	</li>
+	                  	  <li class="win_100"><label>手机号码:</label>
+							   <input name="phones" type="text" validate="{required:false}"  />
+							   <p>[注]多个号码之间用;号分隔</p>
+					</li>
+                    <li class="win_100"><label>接收人:</label>
+							 <input name="personId" type="hidden"  id="personId"  />
+							<input name="personName" type="text" id="personName" 	validate="{required:false}"  />
+					</li>
+  					<li class="win_100"><label>通讯录:</label>
+								<input name="addressBookId" type="hidden"  id="addressBookId" validate="{required:true}" />
+									<input name="addressBookName" type="text" id="addressBookName" validate="{required:false}" readonly />
+					</li>
+
+			         <li class="win_100"><label>excel:</label>
+						 <input type="file"   name="file"  />
+								<p>必须为Excel格式</p>
+					</li>		
+					<li class="win_100 bei_top" ><label>短信内容:</label>
+						<textarea name="content" onkeyup="checkLength(this);"  validate="{required:true}"></textarea>	
+					</li>
+                    <li class="win_100"><label>1</label>
+						<label for='addName'><input type="checkbox" value="是" name="addName" id="addName" />短息后加个人签名</label>
+	                    <label for='addDep'><input type="checkbox" value="是" name="addDep" id="addDep" />短息后加单位签名</label>							
+				    </li>
+                    <li class="win_100">
+					<label>信息长度:</label>
+							<input name="t" type="text" id="smslength" ltype='text' />
+<p>[注]短信一条为70字以内.当短信内容大于70字小于140字时，信息将分成2条发送到用户手机</p>
+					</li>
+	                  	
+	                  	
+	                  	
+	                  </ul>
+	             
+	                </div>
+	                <div class="modal-footer">
+	                    <button type="button" class="btn btn-primary" id="shortcutEnter" data-dismiss="modal">确认</button>
+	                    <button type="button" class="btn btn-primary" id="close" >关闭</button>
+	                </div>
+	            </div>
+	       </div>
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+      	<script type="text/javascript" src="js/Ecalendar.jquery.min.js" ></script>
+      	<script type="text/javascript" src="js/star.js" ></script>
+      	<script>
+      	   //日历控件  type:date类型，skin：颜色，时间控件id也与上面的id一致，不同的时间控件id不能一样
+      	   $(function(){
+		      		$("#ECalendar_case1").ECalendar({
+					type:"date",
+				    skin:"#0095d9",
+					offset:[0,2]
+				});
+				$('#close').click(function(){
+					 $("#pages_m").css('display','none');
+					 $("#backdropId").css('display','none');
+				})
+				
+				
+				
+      	   })
+      	</script>
+	</body>
+</html>

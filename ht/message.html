@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	  <meta name="renderer" content="webkit">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	  <title>信息</title>
+	  <link rel="stylesheet" href="css/bootstrap.min.css" />
+	  <link rel="stylesheet" href="css/xcConfirm.css" />
+	  <script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+	  <script type="text/javascript" src="js/xcConfirm.js" ></script>
+	  <style type="text/css">
+		.sgBtn_bt{width:135px;height:35px;line-height:35px;
+		margin-left:10px;margin-top:10px;text-align:center;background-color:#0095D9;
+		color:#FFFFFF;float:left;border-radius:5px;}
+	  </style>
+	 <script type="text/javascript">
+		$(function(){
+			$("#btn1").click(function(){
+				var txt=  "提示文字，提示文字，提示文字，";     //弹窗显示的文字
+				var option = {
+					title: "提示信息",     //弹窗标题
+					w:'800',    //弹窗的宽度可以自设，默认是570
+					h:'245',    //弹窗的高度可以自设，默认是260
+					icon: "-1px -121px",   //图标的位置
+					btn: window.wxc.xcConfirm.btnEnum.okcancel 
+					//window.wxc.xcConfirm.btnEnum.okcancel 表示确认按钮 window.wxc.xcConfirm.btnEnum.ok表示确认按钮 window.wxc.xcConfirm.btnEnum.cancel
+					
+				}
+				window.wxc.xcConfirm(txt,"custom", option);
+			});
+			
+			$("#btn2").click(function(){
+				var txt=  "提示文字，提示文字，提示文字，提示文字，提示文字，提示文字";
+				var option = {
+					title: "确认信息",
+					icon: "-1px -191px",
+					btn: window.wxc.xcConfirm.btnEnum.ok
+				}
+				window.wxc.xcConfirm(txt,"custom", option);
+		
+			});
+			
+			$("#btn3").click(function(){
+				var txt=  "提示文字，提示文字，提示文字，提示文字，提示文字，提示文字";
+				var option = {
+					title: "警告信息",
+					icon: "-1px -390px",
+					btn: window.wxc.xcConfirm.btnEnum.ok
+				}
+				window.wxc.xcConfirm(txt,"custom", option);
+			});
+			
+			$("#btn4").click(function(){
+				var txt=  "提示文字，提示文字，提示文字，提示文字，提示文字，提示文字";
+				var option = {
+					title: "错误信息",
+					icon: "-1px -260px",
+					btn: window.wxc.xcConfirm.btnEnum.ok
+				}
+				window.wxc.xcConfirm(txt,"custom", option);
+			});
+			
+			$("#btn5").click(function(){
+				var txt=  "提示文字，提示文字，提示文字，提示文字，提示文字，提示文字";
+				var option = {
+					title: "成功信息",
+					icon: "-1px -329px",
+					btn: window.wxc.xcConfirm.btnEnum.ok
+				}
+				window.wxc.xcConfirm(txt,"custom", option);
+			});
+			
+			$("#btn6").click(function(){
+				var txt=  "请输入:<input type='text' />";
+				var option = {
+					title: "输入信息",
+					btn: window.wxc.xcConfirm.btnEnum.ok
+				}
+				window.wxc.xcConfirm(txt,"custom", option);
+			});
+			
+			$("#btn7").click(function(){
+				var txt=  "自定义呀";
+				var option = {
+					title: "自定义",
+					onOk: function(){
+						console.log("确认啦");
+					}
+				}
+				window.wxc.xcConfirm(txt, "custom", option);
+			});
+			
+			$("#btn8").click(function(){
+				var txt=  "默认";
+				window.wxc.xcConfirm(txt);
+			});
+			
+		});
+		</script>
+</head>
+<body>
+<div style="height: 168px;">
+	<div class="sgBtn_bt" id="btn1">弹窗1(信息)</div>
+	<div class="sgBtn_bt" id="btn2">弹窗2(提示)</div>
+	<div class="sgBtn_bt" id="btn3">警告消息</div>
+	<div class="sgBtn_bt" id="btn4">错误消息</div>
+	<div class="sgBtn_bt" id="btn5">成功消息</div>
+	<div class="sgBtn_bt" id="btn6">弹窗6(输入框)</div>
+	<div class="sgBtn_bt" id="btn7">弹窗7(自定义)</div>
+	<div class="sgBtn_bt" id="btn8">弹窗8(默认)</div>
+</div>
+
+	</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>添加页面</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/date.css" />
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+			<div class="list_wrapper">
+           <div class="clearfix tab_wrapper_add">
+	           	<ul class="pull-left tab_add">
+	           		<li>新增单位场所</li>
+	           	</ul>
+           		<div class="pull-right list_subnav"><span class="ml"></span>当前位置：<a href="##">基础信息</a> > <a href="##">人口信息</a> > 新增单位场所</div>
+           </div>
+             <div class="modal-body shortcut-add-box list_add">
+	                  <ul class="clearfix">
+	                  	<!--以下分为两种，一种是一行排一个，则需要在   li   标签上加上类名 win_100     如果排两个 不需要写什么-->
+	                  	<li class="win_100"><label><span>*</span>所属网络:</label><input type="text" value="请选择所在网格"  onFocus="if(value==defaultValue){value='';}" 
+			           				onBlur="if(!value){value=defaultValue;}"   />  
+			           		<p>所属网络不能为空</p>		
+	                  	</li>
+	                  	<li><label><span>*</span>类型:</label><div class="calendarWarp" >
+								<input type="text"  class='ECalendar' id="ECalendar_case2"/>
+							</div>
+	                   </li>
+	                  	<li><label><span>*</span>分类:</label>
+	                  		<select>
+	                  			<option>选择一</option>
+	                  			<option>选择二</option>
+	                  			<option>选择3</option>
+	                  			<option>选择4</option>
+	                  		</select>
+	                  	</li>
+	                  	<li><label><span>*</span>性别:</label>
+	                  		<label for='male'><input type="radio" name="sex" id='male' />男</label>
+	                  		<label for='wo'><input type="radio" name="sex" id='wo'/>女</label>
+	                  		<label for='dis_r' class="dis_abled"><input type="radio" name="sex" id='dis_r' disabled="disabled" />不可用</label>
+	                  	</li>
+	                  	
+	                  	<li><label>联系电话:</label><input type="text" value="请输入固定的电话"  onFocus="if(value==defaultValue){value='';}" 
+			           				onBlur="if(!value){value=defaultValue;}"   />  
+	                  	</li>
+	                  	<li class="win_100"><label><span>*</span>学历:</label>
+	                  		<label for='d_z'><input type="checkbox" checked="checked"  id='d_z'/>大专</label>
+	                  		<label for='zz'><input type="checkbox" id='zz'/>中专</label>
+	                  		<label for='ss'><input type="checkbox"  id='ss'/>硕士</label>
+	                  		<label for='bs'><input type="checkbox"  id='bs'/>博士</label>
+	                  		<label for='gz' class="dis_abled"><input type="checkbox" disabled="disabled" id='gz' />高中</label>
+	                  	</li>
+	                  	<li>
+	                  		<label>关注程度:</label> 
+	                  		<div id="star_M">
+								<ul>
+									<li><a href="javascript:;">1</a></li>
+									<li><a href="javascript:;">2</a></li>
+									<li><a href="javascript:;">3</a></li>
+									<li><a href="javascript:;">4</a></li>
+									<li><a href="javascript:;">5</a></li>
+								</ul>
+								<span></span>
+								<p>请选择关注程度</p>
+							</div>
+	                  	</li>
+	                  	<li><label>传真号码:</label><input type="text" value="请输入传真号码"  onFocus="if(value==defaultValue){value='';}" 
+			           				onBlur="if(!value){value=defaultValue;}"   />  
+	                  	</li>
+	                  	<li class="win_100 bei_top"><label>备注:</label>
+	                  	<textarea >	</textarea>
+	                  	</li>
+	                  </ul>
+	             
+	               </div>
+	               <div class="add_btngroup"><button>关闭</button><button>下一步</button><button class="curr">保存</button></div>
+			        <script src="js/jquery-1.9.1.min.js"></script>
+			        <script src="js/bootstrap.min.js"></script>
+			      	<script type="text/javascript" src="js/Ecalendar.jquery.min.js" ></script>
+      				<script type="text/javascript" src="js/star.js"></script>
+			      	<script>
+			      	   //日历控件  type:date类型，skin：颜色，时间控件id也与上面的id一致，不同的时间控件id不能一样
+			      		$("#ECalendar_case2").ECalendar({
+						type:"date",
+					    skin:"#0095d9",
+						offset:[0,2]
+					});
+      				</script>
+    </body>
+
+
+</html>

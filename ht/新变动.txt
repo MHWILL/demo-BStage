@@ -1,0 +1,35 @@
+删除了文件夹 skin和里面的相关东西
+
+
+index.html
+
+
+34-41：
+   <div class="pull-left head_image">
+            	 <!--头像-->
+                <img src="img/avatar04.png" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+            	 <!--用户姓名-->
+                <p><a href="##">雷豹科技雷豹科技~！</a> 欢迎你登录</p>
+    </div>
+改成：
+ <div  class="logo">
+                <span class="logo-mini head_image"><img src="img/avatar04.png" class="img-circle" alt="User Image"></span>
+                <span class="logo-lg" >
+                	<div class="pull-left head_image">
+            	 		<!--头像-->
+                    	<img src="img/avatar04.png" class="img-circle" alt="User Image" >
+                    	<span class="info_head"><a href="##"  title="雷豹科技雷豹科技~！">雷豹科技雷豹科技~！</a> 欢迎你登录</span>
+            		</div>
+                </span>
+ </div>
+ 
+ 
+ 
+ 
+ 按钮
+ 只需：在span元素上面加上相应的类：
+ <button id='btn_add'><span class="icon_btn btn_add" ></span>新增项目</button>
+ 
+ 

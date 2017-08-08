@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>数据列表页</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/bootstrap-table.css" />
+        <link rel="stylesheet" href="css/index.css" />
+        <link rel="stylesheet" href="css/date.css" />
+    </head>
+    <body>
+    	<div class="list_wrapper">
+           <div class="clearfix tab_wrapper">
+	           	<ul class="pull-left tab">
+	           		<li>未落户人口</li>
+	           		<li>境外人员</li>
+	           	</ul>
+           		<div class="pull-right list_subnav"><span class="ml"></span>当前位置：<a href="##">基础信息</a> > <a href="##">人口信息</a> > 未落户人口</div>
+           </div>
+           <div class="tab_list"> 
+           <!--未落户人口  start -->
+           <div class="tab_one">
+	           <div class="clearfix list_select ">
+	           		<div class="select_num">
+	           			<ul>
+	           				<li>
+	           					<span>当前所在辖区</span> <select>
+	           					<option>插旗山村</option>
+	           					<option>插旗山村1</option>
+	           					<option>插旗山村2</option>
+	           				</select>
+	           				</li>
+	           				<li >
+	           					<span>管理治安负责人 </span>
+	           					<select>
+	           					<option>无</option>
+	           					<option>插旗山村1插旗山村1</option>
+	           					<option>插旗山村2</option>
+	           				</select>
+	           				</li>
+	           				<li >
+	           					<span>设置状态</span> 
+	           					<select>
+	           					<option>开启</option>
+	           					<option>插旗山村1</option>
+	           					<option>插旗山村2</option>
+	           				</select>
+	           				</li>
+	           				<li >
+	           					<span>管理治安巡查情况</span>
+	           					<select>
+	           					<option>有</option>
+	           					<option>插旗山村1</option>
+	           					<option>插旗山村2</option>
+	           				</select>
+	           				</li><li >
+	           					<span>当前所在辖区</span> <select>
+	           					<option>插旗山村</option>
+	           					<option>插旗山村1</option>
+	           					<option>插旗山村2</option>
+	           				</select>
+	           				</li>
+	           			</ul>
+	           		</div>
+	           </div>
+		         <div class="toolbar_all">	
+		         	<!--搜索框-->
+			         <div class="find_form pull-left">
+			           			<input type="text"  value="请输入单位名称"  onFocus="if(value==defaultValue){value='';}" 
+			           				onBlur="if(!value){value=defaultValue;}"  class="find_text"/>
+			           			<span>
+			           				<input type="button" value="搜索" class="find_btn" />
+			           			</span>
+			           </div>
+			           <!--按钮-->
+			           <div class="pull-left full_button">
+			           		<button><span class="glyphicon glyphicon-search"></span>高级搜索</button>
+			           		<button id='btn_add'><span class="glyphicon glyphicon-plus" ></span>新增项目</button>
+			           		<button id='refresh'><span class="glyphicon glyphicon-repeat"></span>刷新信息</button>
+			           		<!--批量删除 要判断是否选择了表格中的数据，没有选中数据的时候 则button 安妞应该表示不可以用 样式为btn_dis,有选择数据的样式为：btn_del-->
+				            <button id="button"><span class="glyphicon glyphicon-trash"></span>批量删除</button>
+			           </div>
+	            	</div>
+	            	<!--加载数据表格-->
+		            <div class="table-responsive ">
+		            	<!--以下参数解释：id, data-toggle必须要，data-toolbar：表格上方的工具条；data-height：表格高度；
+		            		data-detail-view：表格每条数据详解（既+图标点开位置）；data-show-columns：显示自定义列； data-pagination：分页；
+		            		data-detail-formatter：自定义显示图标+数据的方法；data-striped：隔行变色
+		            	-->
+			             <table id="table" 
+			               data-toggle="table" 
+			               data-toolbar="#toolbar"   
+			               data-height="586"   
+			               data-detail-view="true"  
+			               data-show-columns="true"
+			               data-pagination="true"
+			               data-detail-formatter="detailFormatter"
+			               data-striped='true'
+			               >
+		        	</table>
+	           	</div>
+           
+           </div>
+           <!--未落户人口  end -->
+           <!--境外人员  start -->
+           <div class="tab_one">
+	            <div class="clearfix list_select">
+	           		<div class="select_num">
+	           			<ul>
+	           				<li>
+	           					<span>当前所在辖区</span> <select>
+	           					<option>插旗山村</option>
+	           					<option>插旗山村1</option>
+	           					<option>插旗山村2</option>
+	           				</select>
+	           				</li>
+	           				<li >
+	           					<span>管理治安负责人 </span>
+	           					<select>
+	           					<option>无</option>
+	           					<option>插旗山村1插旗山村1</option>
+	           					<option>插旗山村2</option>
+	           				</select>
+	           				</li>
+	           				<li >
+	           					<span>设置状态</span> 
+	           					<select>
+	           					<option>开启</option>
+	           					<option>插旗山村1</option>
+	           					<option>插旗山村2</option>
+	           				</select>
+	           				</li>
+	           				<li >
+	           					<span>管理治安巡查情况</span>
+	           					<select>
+	           					<option>有</option>
+	           					<option>插旗山村1</option>
+	           					<option>插旗山村2</option>
+	           				</select>
+	           				</li><li >
+	           					<span>当前所在辖区</span> <select>
+	           					<option>插旗山村</option>
+	           					<option>插旗山村1</option>
+	           					<option>插旗山村2</option>
+	           				</select>
+	           				</li>
+	           			</ul>
+	           		</div>
+	           		
+	           </div>
+           <!--境外人员  end -->
+           </div>
+        	
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-table.js"></script>
+      	<script type="text/javascript" src="js/tab.js" ></script>
+        <script>
+         var $table = $('#table');
+		 var $button=$('#button');
+		 //刷新
+		 $('#refresh').click(function(){
+		 	  $table.bootstrapTable('refresh');
+		 })
+		$table.bootstrapTable('hideColumn', 'xueli');
+		 //表格上的删除按钮，可以单个删除，也可以批量删除
+		 $button.click(function () {
+		        var ids = $.map($table.bootstrapTable('getSelections'), function (row) {
+		          return row.id;
+		  });
+		   $table.bootstrapTable('remove', {
+		            	field: 'id',
+		                values: ids
+		            });
+		       });
+		  //点击button按钮class为one的返回改行id的值
+		 $('button.one').click(function(){
+		 	 var ids = $.map($table.bootstrapTable('getSelections'), function (row) {
+		          return row.id;
+		 	 });
+		 	 
+		 })
+		//操作列的方法，可以加相关的按钮
+		function operateFormatter(value, row, index) {
+		    return [
+		        '<a class="like" href="javascript:void(0)" title="Like">',
+		        '数据展示',
+		        '</a>  ',
+		        '<a class="remove" href="javascript:void(0)" title="Remove">',
+		        '删除',
+		        '</a>',
+		        '<a class="update" href="javascript:void(0)" title="update">',
+		        '修改',
+		        '</a>'
+		       ].join('');
+		    }
+			//操作列对应的按钮处理
+			window.operateEvents = {
+				//点击列中的展示数据 返回当前的这一行的json数据
+		        'click .like': function (e, value, row, index) {
+		            alert('You click like action, row: ' + JSON.stringify(row));
+		        },
+		        //点击列中的  删除   删除当前这条数据
+		        'click .remove': function (e, value, row, index) {
+		            $table.bootstrapTable('remove', {
+		                field: 'id',
+		                values: [row.id]
+		            });
+		        },
+		        //点击列中的修改 返回的id
+		        'click .update':function (e, value, row, index) {
+		           alert([row.id]);
+		        }
+		        
+	    };
+			//显示每列内容的方法,index为索引，row为当前行，value为值
+        	function detailFormatter(index, row) {
+		    var html = [];
+		        $.each(row, function (key, value) {
+		            html.push('<p><span style="color:#0095d9">' + key + ':</span> ' + value + '</p>');
+		        });
+		        return html.join('');
+	        } 
+		    
+		 //数据加载   ：列中：field就是json数据中的字段，title:表格头部显示的文字，width：自定义，sortable：是否启用排序，formatter：自定义函数 ，events：自定义事件
+		$('#table').bootstrapTable({
+			 columns: [{
+			        field: 'state',
+			        width: '3%',
+			        checkbox:'true'
+			   }, {
+			        field: '地址',
+			        title: '地址',
+			        width: '15%',
+			        sortable:'true',
+			       	formatter: function(value,row,index){
+			       		    if(row.地址.length>10){
+			       		    	row.地址=row.地址.substring(0,9)+'.....';
+			       		    }
+                                    return row.地址;
+                            }
+			        
+			    }, {
+			        field: '负责人',
+			        width: '8%',
+			        title: '负责人',
+			        sortable:'true'
+			    }, {
+			        field: 'phone',
+			        title: '联系电话',
+			        width: '8%',
+			        sortable:'true'
+			    }, {
+			        field: '关注',
+			        width: '5%',
+			        title: '关注',
+			        sortable:'true'
+			    },{
+			        field: 'anquan',
+			        title: '治安负责',
+			        width: '5%', 
+			        sortable:'true'
+			    },{
+			        field: '记录时间',
+			        title: '记录时间',
+			        width: '10%',
+			        sortable:'true'
+			    },{
+			        field: 'g_c',
+			        title: '关注程度',
+			        width: '10%',
+			        sortable:'true',
+			       	formatter: function(value,row,index){
+			       		if(row.g_c>0){
+                    		var str='';
+                    		var str1='';
+                    		for(var i=0;i<5;i++){
+                    			if(i<row.g_c){
+                    				//经过判断添加关注程度的星级   
+                    				str+='<span  class="glyphicon glyphicon-star star"></span>';
+                    			}else{
+                    				str1+='<span  class="glyphicon  glyphicon-star-empty star"></span>';
+                    			}
+                    			
+                    		}
+                    		var a=str+str1;
+                    		return a;
+                    	}
+			       	}
+			    },{
+			        field: 'max',
+			        title: '最大值',
+			        width: '5%',
+			        sortable:'true'
+			    }, {
+			        field: 'min',
+			        title: '最小值',
+			        width: '5%',
+			        sortable:'true'
+			    }, {
+			        field: 'xueli',
+			        width: '5%',
+			        title: '学历'
+			    },{
+			        title: '状态',
+			        width: '5%',
+			        formatter:function(){
+			        	//自定义状态按钮
+			        	return	'<input class="mui-switch mui-switch-animbg" type="checkbox">' 
+			        }
+			    }, {
+			        title: '操作',
+			        width: '15%',
+			        formatter:'operateFormatter',
+			        events:'operateEvents'
+			    } ],
+		    data: [  {
+		    	       'id':1,
+				       '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 21,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':2,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 22,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':3,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 23,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':4,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 24,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':5,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 25,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':6,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 26,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':7,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 27,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':8,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 28,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':9,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 29,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':10,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 30,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':11,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 31,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':12,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 32,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':13,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 33,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':14,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 20,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':15,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 20,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':16,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 20,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':17,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 20,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':18,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 20,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':19,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 20,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':20,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 20,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':21,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 20,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':22,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 20,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':23,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 20,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':24,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 20,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':25,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 20,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':26,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 20,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':27,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 20,min: 2,xueli: "大专"
+				    },
+				     {
+		    	        'id':28,
+				        '地址': "乡村派出所成都市锦江区春熙路","负责人": "向巴多吉利",phone:"13625554898","关注": "是",anquan: "无",
+				       '记录时间': "2017-04-28",
+				        g_c: 3,max: 20,min: 2,xueli: "大专"
+				    }]
+		});
+        </script>
+    </body>
+</html>

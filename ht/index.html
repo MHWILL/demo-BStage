@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>雷暴科技开发系统</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="css/skins/_all-skins.css">-->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/date.css" />
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+	<!--加载图标-->
+   <div id="ajax-loader" class="loader">
+        <img src="img/ajax-loader.gif"   />
+    </div>
+    <!--顶部导航-->
+    <div class="wrapper top" id='fold_all'>
+    	<div class="logo pull-left" id='logo'><a href="##"><img  src="img/LEIBAO.png"/></a></div>
+    	<div class="logo pull-left" id='logo_big'><a href="##"><img  src='img/logo_big.png'/></a></div>
+
+    	<div class="fr pull-right">
+    		<button class="btn_fold" id='btn_fold'><span class="icon_normal btn_f" id='fold'></span>展开</button>
+    		<button class="btn_fold" id='btn_skin'> <span class="icon_normal btn_skin"></span>皮肤</button>
+    		<button class="btn_fold" id='btn_exit'> <span class="icon_normal btn_exit"></span>退出</button>
+    	</div>
+    </div>
+    <div class="wrapper">
+        <!--头部信息-->
+        <header class="main-header clearfix">
+             <div  class="logo">
+                <span class="logo-mini head_image"><img src="img/avatar04.png" class="img-circle" alt="User Image"></span>
+                <span class="logo-lg" >
+                	<div class="pull-left head_image">
+            	 		<!--头像-->
+                    	<img src="img/avatar04.png" class="img-circle" alt="User Image" >
+                    	<span class="info_head"><a href="##"  title="雷豹科技雷豹科技~！">雷豹科技雷豹科技~！</a> 欢迎你登录</span>
+            		</div>
+                </span>
+            </div>
+            <nav class="navbar navbar-static-top" >
+                <a class="sidebar-toggle">
+                 	<span class="sr-only">Toggle navigation</span>
+                </a>
+
+	            <div class="pull-left second_nav">
+	            	<ul>
+	            		<li><a href="##"><i  class="icon_change second_nav_one"></i> 基础信息</a></li>
+	            		<li><a href="##"><i class="icon_change second_nav_two"></i> 任务清单</a></li>
+	            		<li><a href="##"><i class="icon_change second_nav_three"></i> 事件处理</a></li>
+	            		<li><a href="##"><i class="icon_change second_nav_four"></i> 网上办公</a></li>
+	            		<li><a href="##"><i class="icon_change second_nav_five"></i> 拓展应用</a></li>
+	            		<li><a href="##"><i class="icon_change second_nav_six"></i> 系统管理</a></li>
+	            	</ul>
+	            </div>
+            </nav>
+        </header>
+        <!--左边导航-->
+        <div class="main-sidebar">
+            <div class="sub_title_head">六大基础信息</div>
+            <div class="sidebar" id="aaa">
+                <ul class="sidebar-menu" id="sidebar-menu">
+            </div>
+        </div>
+        <!--中间内容-->
+        <div id="content-wrapper" class="content-wrapper">
+            <div class="content-tabs">
+            	<button class="sidebar-toggle" style="position: absolute; border: 1px solid red;display: block; color: #FFFFFF;">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <button class="roll-nav roll-left tabLeft">
+                    <i class="fa fa-backward"></i>
+                </button>
+                <nav class="page-tabs menuTabs">
+                    <div class="page-tabs-content" style="margin-left: 0px;">
+                        <a href="javascript:;" class="menuTab active" data-id="add.html" >欢迎首页</a>
+                    </div>
+                </nav>
+                <button class="roll-nav roll-right tabRight">
+                    <i class="fa fa-forward" style="margin-left: 3px;"></i>
+                </button>
+                <div class="btn-group roll-nav roll-right">
+                    <button class="dropdown tabClose" data-toggle="dropdown">
+                        页签操作<i class="fa fa-caret-down" style="padding-left: 3px;"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a class="tabReload" href="javascript:void();">刷新当前</a></li>
+                        <li><a class="tabCloseCurrent" href="javascript:void();">关闭当前</a></li>
+                        <li><a class="tabCloseAll" href="javascript:void();">全部关闭</a></li>
+                        <li><a class="tabCloseOther" href="javascript:void();">除此之外全部关闭</a></li>
+                    </ul>
+                </div>
+                <button class="roll-nav roll-right fullscreen"><i class="fa fa-arrows-alt"></i></button>
+            </div>
+            <div class="content-iframe" style="overflow: hidden;">
+                <div class="mainContent" id="content-main" style="margin: 10px; margin-bottom: 0px; padding: 0;">
+                    <iframe class="LRADMS_iframe" width="100%" height="100%" src="list_demo.html" frameborder="0" data-id="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript" src="js/tab.js"></script>
+    <script type="text/javascript">
+        window.onresize=window.onrefresh=function(){
+        var oSideBar = document.getElementById('aaa');
+        var t = oSideBar.offsetTop+oSideBar.offsetHeight;
+        if(t>document.documentElement.clientHeight&&oSideBar.offsetWidth==230){
+            oSideBar.style.height=oSideBar.offsetHeight-(t-document.documentElement.clientHeight)+'px';
+            oSideBar.style.overflowY='auto';
+        }
+    }
+    </script>
+    <!--<script>
+    	$(function(){
+    		$('#index').click(function(){
+    			var a=$(this).attr('data-id');
+    			$('#content-main iframe').attr('src',a);
+//  			alert($('#content-main iframe').attr('src'));
+
+    		})
+    	})
+    </script>-->
+</body>
+</html>

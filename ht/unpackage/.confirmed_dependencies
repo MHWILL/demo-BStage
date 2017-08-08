@@ -1,0 +1,29 @@
+{
+	"index.html": {
+		"resources": [
+			"img/LEIBAO.png",
+			"img/sort.png",
+			"img/avatar04.png",
+			"js/tab.js",
+			"img/select_arrow.png",
+			"css/bootstrap-table.css",
+			"css/skins/_all-skins.css",
+			"js/bootstrap-table.js",
+			"list_demo.html",
+			"css/bootstrap.min.css",
+			"fonts/glyphicons-halflings-regular.woff2",
+			"js/tool.js",
+			"css/index.css",
+			"img/icon_change.png",
+			"js/jquery-1.9.1.min.js",
+			"css/font-awesome.min.css",
+			"img/icon_normal.png",
+			"js/bootstrap.min.js",
+			"img/ml.jpg",
+			"img/logo_big.png",
+			"fonts/fontawesome-webfont.woff",
+			"js/index.js",
+			"img/ajax-loader.gif"
+		]
+	}
+}
